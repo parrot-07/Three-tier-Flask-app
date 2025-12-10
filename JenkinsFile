@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps { checkout scm }
+    }
+
+    stage('Build & Test') {
+      steps {
+        sh '''
+          docker build -t myflaskapp:latest .
+          docker run --rm myflaskapp:latest pytest -q || exit 1
+        '''
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sshagent(credentials: ['ec2-ssh-key']) {
+          sh '''
+            scp docker-compose.yml nginx.conf ec2-user@<EC2_HOST>:/home/ec2-user/
+            ssh ec2-user@<EC2_HOST> '
+              cd /home/ec2-user &&
+              docker compose pull &&
+              docker compose up -d --build
+            '
+          '''
+        }
+      }
+    }
+  }
+}
