@@ -1,2 +1,2 @@
 # Three-tier-Flask-app
-flask app with nginx for frontend and mysql for backend 
+flask app with nginx for frontend and flask for backend that depends on mysql
