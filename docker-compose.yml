@@ -12,7 +12,8 @@ services:
        - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
   backend:
-     build: docker build -t flask-image .
+     build: .
+     image: flask-image
      container_name: flask-backend
      restart: always
      environment:
