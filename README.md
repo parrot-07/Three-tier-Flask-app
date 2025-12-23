@@ -16,7 +16,7 @@ MySQL Database (Port 3306)
 
 Each tier runs in its own Docker container and communicates using Docker internal networking.
 
-<img width="1440" height="920" alt="image" src="https://github.com/user-attachments/assets/0adeb43c-7e0b-4ec2-b14b-4db4ca72df8a" />
+<img width="1320" height="880" alt="image" src="https://github.com/user-attachments/assets/5125d0c0-3e2b-4518-b6cc-e392ae258f60" />
 
 Components Explained
 
