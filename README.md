@@ -79,7 +79,6 @@ Cause:
 
 Nginx could not resolve the backend service at startup
 
-
 Fixes Applied:
 
 Used Docker Compose service name (backend) in proxy_pass
@@ -88,5 +87,13 @@ Ensured all services were on the same Docker network
 
 Added Docker DNS resolver to Nginx config:
 
+ resolver 127.0.0.11 valid=10s;
 
-resolver 127.0.0.11 valid=10
+❌ Issue 2: flask container was not up but restarting
+
+Fixes Applied:
+
+Identified a python syntax error through the docker container logs
+
+Corrected the try except syntax in app.py 
+
