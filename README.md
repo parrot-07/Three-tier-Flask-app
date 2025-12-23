@@ -4,15 +4,8 @@ Three-Tier Flask Application (Nginx + Flask + MySQL)
 
 This project demonstrates a three-tier web application architecture using Docker Compose, designed and debugged with the goal of deploying via Jenkins CI/CD to an AWS EC2 instance.
 
-🧱 Architecture Overview
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/509aba4c-6834-4e81-a928-a295795d49d8" />
 
-Client (Browser)
-     ↓
-Nginx (Reverse Proxy – Port 80)
-     ↓
-Flask Application (Gunicorn – Port 5000)
-     ↓
-MySQL Database (Port 3306)
 
 Each tier runs in its own Docker container and communicates using Docker internal networking.
 
