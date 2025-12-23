@@ -16,19 +16,7 @@ MySQL Database (Port 3306)
 
 Each tier runs in its own Docker container and communicates using Docker internal networking.
 
-📁 Project Structure
-
-flask-mysql-3tier/
-│
-├── app/
-│   ├── app.py              # Flask application
-│   ├── Dockerfile          # Backend Dockerfile (Gunicorn)
-│   └── requirements.txt    # Python dependencies
-│
-├── nginx/
-│   └── default.conf        # Nginx reverse proxy config
-│
-└── docker-compose.yml      # Multi-container orchestration
+<img width="1440" height="920" alt="image" src="https://github.com/user-attachments/assets/0adeb43c-7e0b-4ec2-b14b-4db4ca72df8a" />
 
 Components Explained
 
