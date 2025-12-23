@@ -13,11 +13,11 @@ def index():
                                    database = os.getenv("DB_NAME"))
     cursor = conn.cursor()
     cursor.execute("SELECT 'Hello from Flask to Mysql to Nginx!'")
-    result = cursor.ffetchone()
+    result = cursor.fetchone()
     conn.close()
     return result[0]
 
   except Exception as e:
-    return f"Database connection error: {str(e)}"
+    return f"Database connection error: {str(e)}", 500
 
-if __name__ == "__main__" : app.run(debug=True)
+if __name__ == "__main__" : app.run(host="0.0.0.0", port=5000)
