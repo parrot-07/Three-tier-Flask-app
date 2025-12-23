@@ -17,7 +17,7 @@ def index():
     conn.close()
     return result[0]
 
-except Exception as e:
+  except Exception as e:
     return f"Database connection error: {str(e)}"
 
 if __name__ == "__main__" : app.run(debug=True)
