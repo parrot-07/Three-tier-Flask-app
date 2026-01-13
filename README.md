@@ -91,10 +91,16 @@ Identified a python syntax error through the docker container logs
 Corrected the try except syntax in app.py 
 
 Now deploying the code on an EC2 instance after integrating it with jenkins for CI/CD
+
 Steps:
+
 * Launch an EC2 instance (I have taken t3.medium because jenkins is heavy and t2 micro cannot handle it)
 * install  docker and docker compose
 * install jenkins
 * edit security groups with required inbound rules , here open ports 8080, 5000, 80
+
 In jenkins
 - create a pipeline with the github link
+- configure the pipeline with git SCM, give the git repository url and also the script as Jenkinsfile
+- apply and save the changes.. good to go.. !! build your pipeline
+- See your output on http://<ec2publicIP>:80/
